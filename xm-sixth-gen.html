@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Xfinity Mobile Sixth Generation Cheatsheet — Telesales</title>
+<style>
+  @page { size: letter; margin: 0.4in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    color: #1a1a2e;
+    background: #f5f3fb;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 18px 22px 28px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(97,56,245,0.08);
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(120deg, #6138f5 0%, #8c5cf7 55%, #b48cf9 100%);
+    color: #fff;
+    padding: 18px 24px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .hero-left .eyebrow {
+    font-size: 9pt;
+    letter-spacing: 3px;
+    font-weight: 700;
+    opacity: 0.9;
+  }
+  .hero-left h1 {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.02;
+    margin-top: 4px;
+    letter-spacing: -0.5px;
+  }
+  .hero-left .subtitle {
+    font-size: 12pt;
+    opacity: 0.95;
+    margin-top: 4px;
+    max-width: 520px;
+  }
+  .hero-stats { display: flex; gap: 9px; }
+  .stat-tile {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.32);
+    border-radius: 6px;
+    padding: 9px 12px;
+    text-align: center;
+    min-width: 78px;
+  }
+  .stat-tile .val { font-size: 22pt; font-weight: 900; line-height: 1; }
+  .stat-tile .lbl { font-size: 7.5pt; letter-spacing: 1.2px; font-weight: 700; margin-top: 4px; }
+
+  /* ===== Grid layout ===== */
+  .row { display: grid; gap: 12px; margin-bottom: 12px; }
+  .row.two { grid-template-columns: 1fr 1fr; }
+  .row.one-two { grid-template-columns: 1fr 1.2fr; }
+
+  /* ===== Cards ===== */
+  .card {
+    border: 1px solid #e4dcf7;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    padding: 8px 16px;
+    font-size: 11pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-header .tag {
+    font-size: 8.5pt;
+    background: rgba(255,255,255,0.24);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .card-body { padding: 12px 16px; flex: 1; }
+
+  .theme-plans .card-header { background: linear-gradient(90deg, #6138f5, #8c5cf7); }
+  .theme-intl .card-header { background: linear-gradient(90deg, #e040fb, #ab47bc); }
+  .theme-compete .card-header { background: linear-gradient(90deg, #0984e3, #74b9ff); }
+  .theme-hooks .card-header { background: linear-gradient(90deg, #2d3436, #485460); }
+  .theme-swaps .card-header { background: linear-gradient(90deg, #0984e3, #1d9bf0); }
+  .theme-objections .card-header { background: linear-gradient(90deg, #8c2a2a, #c0392b); }
+
+  /* Accent callouts */
+  .accent-amber { background: #fff8e1; border-left: 4px solid #e67e22; border-radius: 0 6px 6px 0; padding: 11px 14px; }
+  .accent-amber .accent-title { font-size: 9pt; font-weight: 800; letter-spacing: 1px; color: #b45e10; margin-bottom: 6px; text-transform: uppercase; }
+  .accent-green { background: #e8faf5; border-left: 4px solid #00a581; border-radius: 0 6px 6px 0; padding: 11px 14px; }
+  .accent-green .accent-title { font-size: 9pt; font-weight: 800; letter-spacing: 1px; color: #00866a; margin-bottom: 6px; text-transform: uppercase; }
+
+  /* ===== Tables ===== */
+  table { width: 100%; border-collapse: collapse; }
+
+  .tbl-pricing { font-size: 11pt; }
+  .tbl-pricing th {
+    background: #f3eeff; padding: 6px 8px; text-align: left;
+    font-weight: 800; color: #555; font-size: 9pt; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .tbl-pricing th.plus { color: #6138f5; text-align: center; }
+  .tbl-pricing th.select { color: #00a581; text-align: center; }
+  .tbl-pricing td { padding: 5px 8px; }
+  .tbl-pricing td.plus-val, .tbl-pricing td.select-val {
+    text-align: center; font-weight: 800; font-size: 14pt;
+  }
+  .tbl-pricing td.plus-val { color: #6138f5; }
+  .tbl-pricing td.select-val { color: #00a581; }
+  .tbl-pricing td.plus-sub, .tbl-pricing td.select-sub { text-align: center; font-weight: 700; }
+  .tbl-pricing td.small { text-align: center; font-size: 10pt; color: #666; }
+  .tbl-pricing tr.alt td { background: #fafafa; }
+  .tbl-footnote { font-size: 8.5pt; color: #666; margin-top: 6px; font-style: italic; padding: 0 2px; }
+
+  .tbl-features { font-size: 10.5pt; margin-top: 10px; border-top: 2px solid #f0ebff; }
+  .tbl-features th { padding: 5px 8px; text-align: left; font-size: 9pt; color: #555; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+  .tbl-features th.plus { color: #6138f5; text-align: center; }
+  .tbl-features th.select { color: #00a581; text-align: center; }
+  .tbl-features td { padding: 4px 8px; }
+  .tbl-features td.plus { text-align: center; color: #6138f5; font-weight: 700; }
+  .tbl-features td.select { text-align: center; }
+  .tbl-features td.both { text-align: center; }
+  .tbl-features td.na { text-align: center; color: #999; }
+  .tbl-features tr.alt td { background: #fafafa; }
+
+  /* Competitive comparison */
+  .tbl-compare { font-size: 10pt; }
+  .tbl-compare th, .tbl-compare td { padding: 6px 8px; border-bottom: 1px solid #eee; vertical-align: middle; }
+  .tbl-compare th { font-weight: 800; font-size: 9pt; letter-spacing: 0.5px; text-transform: uppercase; background: #f5f1ff; text-align: center; color: #555; }
+  .tbl-compare th.row-label { background: #fff; text-align: right; color: #777; }
+  .tbl-compare th.plus-col { background: #6138f5; color: #fff; font-size: 10.5pt; padding: 10px; }
+  .tbl-compare td.row-label { text-align: right; color: #777; font-weight: 700; font-size: 9.5pt; background: #fff; width: 150px; }
+  .tbl-compare td.plus-cell {
+    background: #f3eeff;
+    color: #2d1a6b;
+    text-align: center;
+    font-weight: 700;
+  }
+  .tbl-compare td.plus-cell strong { color: #6138f5; }
+  .tbl-compare td.competitor { text-align: center; color: #444; background: #fafafa; font-size: 10pt; }
+  .tbl-compare td.dark-row { background: #2d3436; color: #eee; text-align: center; font-size: 9.5pt; }
+  .tbl-compare td.plus-cell.dark-row { background: #482ea6; color: #fff; }
+  .tbl-compare tr.group-header td { background: #6138f5; color: #fff; text-align: left; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; font-size: 9pt; padding: 4px 10px; }
+  .tbl-compare .fine { font-size: 8.5pt; color: #555; font-style: italic; display: block; margin-top: 3px; font-weight: 400; }
+  .tbl-compare .fine-light { font-size: 8.5pt; color: #ccc; font-style: italic; display: block; margin-top: 3px; font-weight: 400; }
+
+  /* ===== International card ===== */
+  .intl-hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 8px 0 12px;
+    border-bottom: 1px dashed #e4dcf7;
+    margin-bottom: 10px;
+  }
+  .intl-big {
+    background: linear-gradient(135deg, #e040fb 0%, #ab47bc 100%);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 130px;
+  }
+  .intl-big .num { font-size: 30pt; font-weight: 900; line-height: 1; }
+  .intl-big .lbl { font-size: 8pt; letter-spacing: 2px; font-weight: 700; margin-top: 4px; }
+  .intl-hero-text { font-size: 10.5pt; line-height: 1.5; color: #2d1a4a; }
+  .intl-hero-text strong { color: #ab47bc; }
+
+  .intl-list { list-style: none; padding: 0; margin-top: 4px; font-size: 10.5pt; line-height: 1.55; }
+  .intl-list li { padding: 5px 0; border-bottom: 1px solid #f4edfa; }
+  .intl-list li:last-child { border-bottom: none; }
+  .intl-list li::before { content: "✓"; color: #ab47bc; font-weight: 900; margin-right: 8px; }
+  .intl-list li.x::before { content: "✕"; color: #c92a2a; }
+  .intl-list b { color: #2d1a4a; }
+
+  .intl-callout {
+    margin-top: 12px;
+    background: #fdf1ff;
+    border-left: 4px solid #ab47bc;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 10pt;
+    line-height: 1.55;
+  }
+  .intl-callout strong { color: #8e24aa; }
+
+  /* ===== Hooks / swaps / objections ===== */
+  .hooks-list { font-size: 11pt; line-height: 1.6; }
+  .hooks-list .hook { padding: 8px 0; border-bottom: 1px solid #f0ebff; display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+  .hooks-list .hook:last-child { border-bottom: none; padding-bottom: 0; }
+  .hooks-list .hook-num { background: #6138f5; color: #fff; font-weight: 800; font-size: 10pt; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .hooks-list .hook-body strong { color: #2d1a6b; }
+  .hooks-list .hook-body em { font-style: normal; font-size: 9pt; color: #777; display: block; margin-top: 3px; }
+
+  .swap-grid { display: grid; grid-template-columns: auto auto 1fr; column-gap: 10px; row-gap: 6px; font-size: 10.5pt; line-height: 1.5; align-items: baseline; }
+  .swap-grid .old { color: #c92a2a; text-decoration: line-through; font-weight: 500; }
+  .swap-grid .arr { color: #999; }
+  .swap-grid .new { font-weight: 700; color: #2d1a6b; }
+
+  .donts { margin-top: 12px; padding-top: 10px; border-top: 2px dashed #eee; font-size: 10pt; line-height: 1.5; }
+  .donts .dont { display: flex; gap: 8px; padding: 4px 0; }
+  .donts .dont .mark { color: #c92a2a; font-weight: 900; font-size: 12pt; flex-shrink: 0; }
+  .donts strong { color: #c92a2a; }
+
+  .obj-list { font-size: 10.5pt; }
+  .obj-list .obj { padding: 10px 0; border-bottom: 1px solid #f5e8e8; }
+  .obj-list .obj:last-child { border-bottom: none; }
+  .obj-list .obj .q { font-weight: 800; color: #8c2a2a; margin-bottom: 4px; }
+  .obj-list .obj .a { color: #333; line-height: 1.55; }
+  .obj-list .obj .a strong { color: #6138f5; }
+
+  /* ===== Money moves bullet list ===== */
+  .move-list { font-size: 11pt; line-height: 1.55; }
+  .move-list .move { padding: 7px 0; border-bottom: 1px solid rgba(230,126,34,0.2); }
+  .move-list .move:last-child { border-bottom: none; padding-bottom: 0; }
+  .move-list .move strong { color: #b45e10; }
+  .move-list .move .amount { color: #e67e22; font-weight: 800; }
+
+  /* ===== Deal math ===== */
+  .deal { font-size: 10.5pt; line-height: 1.6; }
+  .deal .line { margin-bottom: 8px; }
+  .deal .line:last-child { margin-bottom: 0; }
+  .deal .big { font-size: 16pt; font-weight: 900; }
+  .deal .big.plus { color: #6138f5; }
+  .deal .big.select { color: #00a581; }
+
+  /* ===== Footer ===== */
+  .footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 9pt;
+    color: #999;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+
+  /* ===== Full-width utility ===== */
+  .full-width { grid-column: 1 / -1; }
+
+  /* ===== Print overrides ===== */
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; max-width: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ==================== HERO ==================== -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="eyebrow">LAUNCHES 4/22/26 &middot; XFINITY IMAGINE THAT</div>
+      <h1>Xfinity Mobile Sixth Generation</h1>
+      <div class="subtitle">Mobile Plus and Mobile Select replace Unlimited and Premium Unlimited for all new sales. Same 5G network, better value, more included.</div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-tile">
+        <div class="val">$30</div>
+        <div class="lbl">SELECT / LINE</div>
+      </div>
+      <div class="stat-tile">
+        <div class="val">$45</div>
+        <div class="lbl">PLUS / LINE</div>
+      </div>
+      <div class="stat-tile">
+        <div class="val">$120</div>
+        <div class="lbl">MPD SAVINGS / YR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ROW 1: PLANS + INTERNATIONAL ==================== -->
+  <div class="row one-two">
+
+    <!-- Plans at a glance -->
+    <div class="card theme-plans">
+      <div class="card-header">Plans at a Glance <span class="tag">Sixth Gen</span></div>
+      <div class="card-body">
+
+        <table class="tbl-pricing">
+          <tr>
+            <th>Lines</th>
+            <th class="plus">Mobile Plus*</th>
+            <th class="select">Mobile Select*</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="plus-val">$45</td>
+            <td class="select-val">$30</td>
+          </tr>
+          <tr class="alt">
+            <td>2</td>
+            <td class="plus-sub">$90</td>
+            <td class="select-sub">$60</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="plus-sub">$135</td>
+            <td class="select-sub">$90</td>
+          </tr>
+          <tr class="alt">
+            <td>4</td>
+            <td class="plus-sub">$180</td>
+            <td class="select-sub">$120</td>
+          </tr>
+          <tr>
+            <td>5&ndash;12</td>
+            <td class="small">+$45 / line</td>
+            <td class="small">+$30 / line</td>
+          </tr>
+        </table>
+        <div class="tbl-footnote">*Pricing includes the $10 Multi-Product Discount per line when the customer has Xfinity Internet 150 Mbps or higher. Without Internet, add $10 per line.</div>
+
+        <table class="tbl-features">
+          <tr>
+            <th>Feature</th>
+            <th class="plus">Mobile Plus</th>
+            <th class="select">Mobile Select</th>
+          </tr>
+          <tr>
+            <td>Premium data</td>
+            <td class="plus"><strong>Unlimited &mdash; no slowdowns</strong></td>
+            <td class="select">50 GB, then reduced speeds</td>
+          </tr>
+          <tr class="alt">
+            <td>Mobile hotspot</td>
+            <td class="both">50 GB at 5G, then unlimited at 3G</td>
+            <td class="both">15 GB at 5G, then unlimited at 3G</td>
+          </tr>
+          <tr>
+            <td>Video streaming</td>
+            <td class="plus"><strong>4K Ultra HD</strong></td>
+            <td class="select">480p standard (HD enablable)</td>
+          </tr>
+          <tr class="alt">
+            <td>XMC Plus device protection</td>
+            <td class="plus"><strong>&#10003; Included</strong></td>
+            <td class="na">&mdash;</td>
+          </tr>
+          <tr>
+            <td>Upgrade Anytime</td>
+            <td class="plus"><strong>&#10003; Included</strong></td>
+            <td class="na">&mdash;</td>
+          </tr>
+          <tr class="alt">
+            <td>Xfinity Call Guard</td>
+            <td class="plus"><strong>&#10003; Included</strong></td>
+            <td class="na">&mdash;</td>
+          </tr>
+          <tr>
+            <td>International (215+ destinations)</td>
+            <td class="both">10 GB premium, then 14 Mbps</td>
+            <td class="both">10 GB premium, then 14 Mbps</td>
+          </tr>
+          <tr class="alt">
+            <td>Advanced Security on the Go</td>
+            <td class="plus"><strong>&#10003; Included</strong></td>
+            <td class="select">&#10003; Included</td>
+          </tr>
+          <tr>
+            <td>WiFi PowerBoost</td>
+            <td class="plus"><strong>&#10003; Included</strong></td>
+            <td class="select">&#10003; Included</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- International -->
+    <div class="card theme-intl">
+      <div class="card-header">Travel &amp; International <span class="tag">Included</span></div>
+      <div class="card-body">
+
+        <div class="intl-hero">
+          <div class="intl-big">
+            <div class="num">215+</div>
+            <div class="lbl">DESTINATIONS</div>
+          </div>
+          <div class="intl-hero-text">
+            Customers get <strong>unlimited calls and texts in over 250 destinations</strong> worldwide and <strong>premium data in 215+ destinations</strong> &mdash; no roaming charges, no travel-pass add-ons to remember.
+          </div>
+        </div>
+
+        <ul class="intl-list">
+          <li><b>Mexico &amp; Canada:</b> calls, texts, and data included &mdash; treated like home.</li>
+          <li><b>10 GB premium data</b> per billing cycle in 215+ destinations, then speeds up to 14 Mbps.</li>
+          <li><b>Unlimited talk and text</b> worldwide in the 250+ destinations list.</li>
+          <li><b>$0.30 per MB</b> in countries outside the covered list (rare &mdash; most travel destinations are covered).</li>
+          <li class="x"><b>Global Travel Pass:</b> not on Sixth Generation &mdash; replaced by the always-included 10 GB and broader destination list.</li>
+          <li class="x"><b>Tablets and watches:</b> cannot use international data (WiFi only when abroad).</li>
+        </ul>
+
+        <div class="intl-callout">
+          <strong>How to pitch it:</strong> &ldquo;Heading to Mexico this summer? With Xfinity Mobile, your phone works there the same as at home &mdash; calls, texts, and 10 GB of high-speed data, included. No daily fees, no travel passes to activate, no surprise bill when you get back.&rdquo;
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== COMPETITIVE COMPARISON ==================== -->
+  <div class="card theme-compete" style="margin-bottom: 12px;">
+    <div class="card-header">Mobile Plus vs. Verizon, AT&amp;T, and T-Mobile <span class="tag">Competitive Edge</span></div>
+    <div class="card-body" style="padding: 0;">
+      <table class="tbl-compare">
+        <tr>
+          <th class="row-label" style="background:#fff;"></th>
+          <th class="plus-col">Xfinity Mobile Plus</th>
+          <th>AT&amp;T Premium 2.0</th>
+          <th>T-Mobile Experience Beyond</th>
+          <th>Verizon Unlimited Ultimate</th>
+        </tr>
+        <tr class="group-header"><td colspan="5">Monthly plan cost</td></tr>
+        <tr>
+          <td class="row-label">1 line</td>
+          <td class="plus-cell"><strong>$45</strong></td>
+          <td class="competitor">$90</td>
+          <td class="competitor">$100</td>
+          <td class="competitor">$80</td>
+        </tr>
+        <tr>
+          <td class="row-label">2 lines</td>
+          <td class="plus-cell"><strong>$90</strong></td>
+          <td class="competitor">$160</td>
+          <td class="competitor">$170</td>
+          <td class="competitor">$145</td>
+        </tr>
+        <tr>
+          <td class="row-label">3 lines</td>
+          <td class="plus-cell"><strong>$135</strong></td>
+          <td class="competitor">$195</td>
+          <td class="competitor">$170</td>
+          <td class="competitor">$175</td>
+        </tr>
+        <tr>
+          <td class="row-label">4 lines</td>
+          <td class="plus-cell"><strong>$180</strong></td>
+          <td class="competitor">$220</td>
+          <td class="competitor">$215</td>
+          <td class="competitor">$200</td>
+        </tr>
+        <tr>
+          <td class="row-label">Activation fee</td>
+          <td class="plus-cell"><strong>$25 per line</strong></td>
+          <td class="competitor">$35 per line</td>
+          <td class="competitor">$35 per line</td>
+          <td class="competitor">$40 per line</td>
+        </tr>
+
+        <tr class="group-header"><td colspan="5">Device protection</td></tr>
+        <tr>
+          <td class="row-label">Phones, tablets &amp; watches</td>
+          <td class="plus-cell dark-row"><strong>XMC Plus included</strong></td>
+          <td class="dark-row">$14&ndash;$17/mo per device</td>
+          <td class="dark-row">$7&ndash;$25/mo per device</td>
+          <td class="dark-row">$17/mo per device</td>
+        </tr>
+
+        <tr class="group-header"><td colspan="5">Data &amp; streaming</td></tr>
+        <tr>
+          <td class="row-label">Data allowance</td>
+          <td class="plus-cell">Unlimited Premium 5G+</td>
+          <td class="competitor">Unlimited</td>
+          <td class="competitor">Unlimited</td>
+          <td class="competitor">Unlimited</td>
+        </tr>
+        <tr>
+          <td class="row-label">Mobile hotspot</td>
+          <td class="plus-cell"><strong>50 GB at 5G</strong></td>
+          <td class="competitor">100 GB at 5G</td>
+          <td class="competitor">250 GB at 5G</td>
+          <td class="competitor">200 GB at 5G</td>
+        </tr>
+        <tr>
+          <td class="row-label">Video streaming</td>
+          <td class="plus-cell">4K Ultra HD</td>
+          <td class="competitor">4K</td>
+          <td class="competitor">4K</td>
+          <td class="competitor">4K</td>
+        </tr>
+
+        <tr class="group-header"><td colspan="5">International</td></tr>
+        <tr>
+          <td class="row-label">International data</td>
+          <td class="plus-cell"><strong>Unlimited talk, text, premium data in 215+ destinations (incl. Mexico &amp; Canada)</strong><span class="fine">10 GB per billing cycle, then 14 Mbps. $0.30/MB in non-eligible countries.</span></td>
+          <td class="competitor">$12 per day</td>
+          <td class="competitor">15 GB at high speed included</td>
+          <td class="competitor">15 GB at high speed included</td>
+        </tr>
+
+        <tr class="group-header"><td colspan="5">Add-ons &amp; connected devices</td></tr>
+        <tr>
+          <td class="row-label">Wearables &amp; tablets</td>
+          <td class="plus-cell">Watches $10/mo (5 GB) &middot; Tablets $20/mo (15 GB)</td>
+          <td class="competitor">Watches $10/mo &middot; Tablets $21/mo (30 GB)</td>
+          <td class="competitor">Watches $5/mo &middot; Tablets $5/mo (50 GB)</td>
+          <td class="competitor">Watches $7.50/mo &middot; Tablets $20/mo (50 GB)</td>
+        </tr>
+        <tr>
+          <td class="row-label">All-in Tablet &amp; Watch Plan</td>
+          <td class="plus-cell dark-row"><strong>Mix and match up to 10 Watches and Tablets for $35/mo total</strong></td>
+          <td class="dark-row" colspan="3" style="text-align:center; font-style:italic;">No all-in Watch &amp; Tablet plans</td>
+        </tr>
+
+        <tr class="group-header"><td colspan="5">Loyalty &amp; benefits</td></tr>
+        <tr>
+          <td class="row-label">Benefits program</td>
+          <td class="plus-cell">Xfinity member perks: device discounts, unique experiences, product benefits</td>
+          <td class="competitor" style="font-style:italic; color:#999;">n/a</td>
+          <td class="competitor">T-Mobile Tuesdays: free stuff, food/gas/entertainment perks</td>
+          <td class="competitor">VerizonUp: service discounts, sporting events, concerts</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== ROW 2: MONEY MOVES + DEAL MATH ==================== -->
+  <div class="row two">
+
+    <div class="accent-amber">
+      <div class="accent-title">Three Money Moves</div>
+      <div class="move-list">
+        <div class="move"><strong>Multi-Product Discount:</strong> <span class="amount">$10 off each line</span> when bundled with Xfinity Internet (150 Mbps or higher) &mdash; that's <span class="amount">$120 per line, per year</span>, automatic.</div>
+        <div class="move"><strong>XMC Plus:</strong> included with Mobile Plus &mdash; covers the phone <em>and</em> every tablet and watch on the account, lifetime. No per-device protection fees.</div>
+        <div class="move"><strong>All-in Tablet and Watch Plan:</strong> caps combined tablet and watch spend at <span class="amount">$35 per month</span> for up to 10 devices. Auto-applied as a credit when total would exceed $35.</div>
+      </div>
+    </div>
+
+    <div class="accent-green">
+      <div class="accent-title">Free Line + MPD Stack (new XM)</div>
+      <div class="deal">
+        <div class="line" style="color:#555;">Eligible: new Xfinity Mobile customer with 300 Mbps or higher Internet.</div>
+        <div class="line">
+          <strong>Mobile Select first line:</strong><br>
+          base $40 &minus; $30 free-line &minus; $10 MPD = <span class="big select">$0/mo &times; 12 months</span>
+        </div>
+        <div class="line">
+          <strong>Mobile Plus first line:</strong><br>
+          base $55 &minus; $30 free-line &minus; $10 MPD = <span class="big plus">$15/mo &times; 12 months</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== PITCH HOOKS ==================== -->
+  <div class="card theme-hooks" style="margin-bottom: 12px;">
+    <div class="card-header">Pitch Hooks <span class="tag">Say This</span></div>
+    <div class="card-body">
+      <div class="hooks-list">
+        <div class="hook">
+          <div class="hook-num">1</div>
+          <div class="hook-body">
+            &ldquo;Mobile Plus gets you <strong>unlimited premium data with no slowdowns, ever</strong> &mdash; plus device protection and the ability to upgrade whenever you want. All included. Compare that to what you're paying now.&rdquo;
+            <em>Use for: customers mentioning slow speeds, device concerns, or paying a lot</em>
+          </div>
+        </div>
+        <div class="hook">
+          <div class="hook-num">2</div>
+          <div class="hook-body">
+            &ldquo;Because you already have our Internet, the <strong>$10-per-line discount is already baked in</strong>. That's <strong>$120 a year per line</strong>, automatic, just for bundling.&rdquo;
+            <em>Use for: existing Internet customers (always)</em>
+          </div>
+        </div>
+        <div class="hook">
+          <div class="hook-num">3</div>
+          <div class="hook-body">
+            &ldquo;Traveling this summer? Going to Mexico? With Xfinity Mobile your phone works there <strong>the same as at home</strong> &mdash; calls, texts, and 10 GB of premium data. <strong>No daily fees, no travel pass to remember.</strong>&rdquo;
+            <em>Use for: travelers, families with relatives abroad, snowbirds</em>
+          </div>
+        </div>
+        <div class="hook">
+          <div class="hook-num">4</div>
+          <div class="hook-body">
+            &ldquo;If anyone drops their phone, spills on it, or it gets stolen &mdash; XMC Plus covers it. And not just the phone &mdash; <strong>every tablet and watch on the account, lifetime.</strong> One line of Mobile Plus protects the whole family.&rdquo;
+            <em>Use for: families, customers with expensive phones, multi-device households</em>
+          </div>
+        </div>
+        <div class="hook">
+          <div class="hook-num">5</div>
+          <div class="hook-body">
+            &ldquo;Compared to Verizon's Unlimited Ultimate at $80 a line, you're getting the <strong>same 5G speeds for $45 &mdash; saving $420 a year</strong> on a single line. And device protection is included instead of $17 more per month.&rdquo;
+            <em>Use for: Verizon / AT&amp;T / T-Mobile customers</em>
+          </div>
+        </div>
+        <div class="hook">
+          <div class="hook-num">6</div>
+          <div class="hook-body">
+            &ldquo;Got a couple of tablets or smartwatches on the family plan? Our <strong>All-in Tablet and Watch plan caps that at $35 a month, total</strong>, for up to 10 devices. That's one of the best deals in wireless.&rdquo;
+            <em>Use for: families with kids' tablets, multiple Apple Watches, etc.</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ROW 3: SAY THIS NOT THAT + OBJECTIONS ==================== -->
+  <div class="row two">
+
+    <div class="card theme-swaps">
+      <div class="card-header">Say This, Not That <span class="tag">Language</span></div>
+      <div class="card-body">
+
+        <div class="swap-grid">
+          <div class="old">Unlimited</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">Mobile Select</div>
+
+          <div class="old">Premium Unlimited</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">Mobile Plus</div>
+
+          <div class="old">Elite Upgrade</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">Upgrade Anytime</div>
+
+          <div class="old">$40 / $50 a line</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">$30 / $45 with Multi-Product Discount</div>
+
+          <div class="old">$480 free-line value</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">$360 (Mobile Select, 12 months)</div>
+
+          <div class="old">Global Travel Pass</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">10 GB included in 215+ destinations</div>
+
+          <div class="old">T&amp;W Plan</div>
+          <div class="arr">&rarr;</div>
+          <div class="new">All-in Tablet and Watch Plan</div>
+        </div>
+
+        <div class="donts">
+          <div class="dont"><span class="mark">&#10060;</span><div><strong>Do not pitch By the Gig</strong> to new customers. Existing By the Gig customers keep their service &mdash; no forced migration.</div></div>
+          <div class="dont"><span class="mark">&#10060;</span><div><strong>Mobile Plus is not available in New York state</strong> at launch (XMC regulatory restriction). New York customers get Mobile Select only.</div></div>
+          <div class="dont"><span class="mark">&#10060;</span><div><strong>Tablets and watches cannot use international data.</strong> When abroad, they work on WiFi only.</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card theme-objections">
+      <div class="card-header">Top Objections &amp; Rebuttals <span class="tag">Overcome</span></div>
+      <div class="card-body">
+        <div class="obj-list">
+
+          <div class="obj">
+            <div class="q">&ldquo;I'm with Verizon / AT&amp;T / T-Mobile and I'm happy.&rdquo;</div>
+            <div class="a">&ldquo;Totally understandable. Here's the thing &mdash; we run on <strong>the nation's most reliable 5G network too</strong>, and Mobile Plus is <strong>$45 versus Verizon's $80</strong> for the same unlimited data. That's $420 a year on one line, $1,680 on four. Device protection is included instead of extra. Want me to show you the math on your current plan?&rdquo;</div>
+          </div>
+
+          <div class="obj">
+            <div class="q">&ldquo;I just want device protection, not a whole new plan.&rdquo;</div>
+            <div class="a">&ldquo;That's actually where Mobile Plus wins big. Standalone device coverage is usually $15&ndash;$20 a month per device. Mobile Plus <strong>includes protection for the phone plus every tablet and watch</strong> on the account &mdash; lifetime &mdash; for $45 total. If you've got even one tablet on the account, you're already ahead.&rdquo;</div>
+          </div>
+
+          <div class="obj">
+            <div class="q">&ldquo;Can I keep my By the Gig plan?&rdquo;</div>
+            <div class="a">&ldquo;Yes &mdash; existing By the Gig stays, no forced change. If you ever want unlimited data, that's when you'd move to Sixth Generation. Want me to compare what you're using now to what Mobile Select or Mobile Plus would cost?&rdquo;</div>
+          </div>
+
+          <div class="obj">
+            <div class="q">&ldquo;We travel a lot &mdash; I don't want surprises on the bill.&rdquo;</div>
+            <div class="a">&ldquo;Good news &mdash; <strong>10 GB of premium data in 215+ destinations is included</strong>, no daily fee. Mexico and Canada are treated like home for calls, texts, and data. Compared to AT&amp;T's $12-a-day international charge, a two-week trip saves you $168 right there.&rdquo;</div>
+          </div>
+
+          <div class="obj">
+            <div class="q">&ldquo;My family has too many devices &mdash; wouldn't this cost a fortune?&rdquo;</div>
+            <div class="a">&ldquo;That's exactly what <strong>All-in Tablet and Watch is built for</strong>. Up to 10 tablets and watches on the account for <strong>$35 a month total</strong> &mdash; not per device. Plus XMC Plus covers all of them. No one else in wireless offers that.&rdquo;</div>
+          </div>
+
+          <div class="obj">
+            <div class="q">&ldquo;The price went up compared to my old plan.&rdquo;</div>
+            <div class="a">&ldquo;You're right that the per-line price is a little higher than the older plan &mdash; but you're getting <strong>unlimited premium data, device protection, and upgrade anytime included</strong>. On the old plan those were extras. For most customers, the total monthly cost comes out lower once you factor in what you were already paying for protection.&rdquo;</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer">
+    Xfinity Outbound Telesales &middot; Internal Use Only &middot; Broadband Labels required at <strong>xfinity.com/labels</strong> &middot; Xfinity Mobile Sixth Generation launch 4/22/26
+  </div>
+
+</div>
+
+</body>
+</html>
