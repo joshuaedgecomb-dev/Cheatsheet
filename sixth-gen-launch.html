@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XM Sixth Generation Launch — Telesales 1-Pager · 4/22/26</title>
+<style>
+  @page { size: letter; margin: 0.35in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    color: #1a1a2e;
+    background: #fff;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(120deg, #6138f5 0%, #8c5cf7 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .hero-left .eyebrow {
+    font-size: 7pt;
+    letter-spacing: 3px;
+    font-weight: 700;
+    opacity: 0.85;
+  }
+  .hero-left h1 {
+    font-size: 20pt;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-top: 2px;
+    letter-spacing: -0.3px;
+  }
+  .hero-left .subtitle {
+    font-size: 9.5pt;
+    opacity: 0.92;
+    margin-top: 2px;
+  }
+  .hero-stats { display: flex; gap: 6px; }
+  .stat-tile {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    padding: 5px 9px;
+    text-align: center;
+    min-width: 58px;
+  }
+  .stat-tile .val { font-size: 15pt; font-weight: 900; line-height: 1; }
+  .stat-tile .lbl { font-size: 6.5pt; letter-spacing: 1px; font-weight: 700; margin-top: 2px; }
+
+  /* ===== Card skeleton ===== */
+  .card {
+    border: 1px solid #e8e1fb;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .card-header {
+    padding: 4px 10px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .card-body { padding: 8px 10px; }
+  .card.theme-plans .card-header { background: #6138f5; }
+  .card.theme-hooks .card-header { background: #333; }
+  .card.theme-swaps .card-header { background: #0984e3; }
+  .card.theme-objections .card-header { background: #8c2a2a; }
+
+  /* Accent (left-border) callout panels */
+  .accent-amber { background: #fff8e1; border-left: 3px solid #e67e22; border-radius: 0 5px 5px 0; padding: 7px 10px; }
+  .accent-amber .accent-title { font-size: 8pt; font-weight: 800; letter-spacing: 1px; color: #b45e10; margin-bottom: 4px; text-transform: uppercase; }
+  .accent-green { background: #e8faf5; border-left: 3px solid #00a581; border-radius: 0 5px 5px 0; padding: 7px 10px; }
+  .accent-green .accent-title { font-size: 8pt; font-weight: 800; letter-spacing: 1px; color: #00866a; margin-bottom: 4px; text-transform: uppercase; }
+
+  /* ===== Two-column grid row ===== */
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+
+  /* ===== Tables ===== */
+  table { width: 100%; border-collapse: collapse; }
+  .tbl-pricing { font-size: 10pt; }
+  .tbl-pricing th { background: #f7f4ff; padding: 4px 6px; text-align: left; font-weight: 800; color: #666; font-size: 8.5pt; letter-spacing: 0.5px; text-transform: uppercase; }
+  .tbl-pricing th.plus { color: #6138f5; text-align: center; }
+  .tbl-pricing th.select { color: #00a581; text-align: center; }
+  .tbl-pricing td { padding: 3px 6px; }
+  .tbl-pricing td.plus-val { text-align: center; color: #6138f5; font-weight: 800; font-size: 12pt; }
+  .tbl-pricing td.select-val { text-align: center; color: #00a581; font-weight: 800; font-size: 12pt; }
+  .tbl-pricing td.plus-sub { text-align: center; font-weight: 700; }
+  .tbl-pricing td.select-sub { text-align: center; font-weight: 700; }
+  .tbl-pricing td.small { text-align: center; font-size: 9pt; }
+  .tbl-pricing tr.alt td { background: #fafafa; }
+  .tbl-footnote { font-size: 7.5pt; color: #666; margin-top: 3px; font-style: italic; }
+
+  .tbl-features { font-size: 9.5pt; margin-top: 6px; border-top: 1px solid #eee; }
+  .tbl-features th { padding: 3px 6px; text-align: left; font-size: 8.5pt; color: #666; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+  .tbl-features th.plus { color: #6138f5; text-align: center; }
+  .tbl-features th.select { color: #00a581; text-align: center; }
+  .tbl-features td { padding: 2.5px 6px; }
+  .tbl-features td.plus { text-align: center; color: #6138f5; font-weight: 700; }
+  .tbl-features td.select { text-align: center; }
+  .tbl-features td.na { text-align: center; color: #999; }
+  .tbl-features tr.alt td { background: #fafafa; }
+
+  /* ===== Hooks / swaps / objections ===== */
+  .hooks-list { font-size: 9.5pt; line-height: 1.5; }
+  .hooks-list div { margin-bottom: 3px; }
+  .hooks-list div:last-child { margin-bottom: 0; }
+
+  .swap-grid { display: grid; grid-template-columns: auto 1fr; column-gap: 6px; row-gap: 2px; font-size: 9pt; line-height: 1.4; }
+  .swap-grid .old { color: #c92a2a; text-decoration: line-through; }
+  .donts { margin-top: 5px; padding-top: 5px; border-top: 1px dashed #ddd; font-size: 8.5pt; line-height: 1.4; }
+  .donts div { margin-bottom: 2px; }
+  .donts strong { color: #c92a2a; }
+
+  .obj { font-size: 9pt; line-height: 1.4; }
+  .obj div.q { font-weight: 800; }
+  .obj div.a { color: #555; margin-bottom: 4px; }
+  .obj div.a:last-child { margin-bottom: 0; }
+
+  /* ===== Footer ===== */
+  .footer {
+    margin-top: 4px;
+    text-align: center;
+    font-size: 7.5pt;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 4px;
+  }
+
+  /* ===== Print safety ===== */
+  @media print {
+    body { font-size: 9.5pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Content sections will be added in subsequent tasks -->
+
+</body>
+</html>
