@@ -1,0 +1,16 @@
+name: Deploy to partner-team
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy webhook
+        run: |
+          curl -sS --fail-with-body -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"ref":"${{ github.ref }}","repo":"${{ github.repository }}","sha":"${{ github.sha }}"}' \
+            "https://partner-team.gcs.tools/hooks/cheatsheet.php?token=${{ secrets.DEPLOY_WEBHOOK_SECRET_CHEATSHEET }}"
